@@ -1,0 +1,107 @@
+:root {
+    --bg: #222;
+    --br: #707070;
+    --clr: #ff3366;
+}
+
+body {
+    background-color: #222;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+}
+.header img {
+    padding: 1em;
+    padding-left: 5em;
+    width: 15em;
+}
+.header .right {
+    position: absolute;
+    right: 3.5em;
+    padding-right: 5em
+}
+.header .right span.link {
+    color: #fff;
+    font-weight: 300;
+    padding-left: 1em;
+    cursor: pointer;
+}
+.header .right select {
+    font-size: .75em;
+    margin-left: 5em;
+    background: none;
+    color: white;
+    border: 1px solid var(--br);
+}
+.header .right select option {
+    background-color: #222;
+}
+
+.header .right.connected span.mdi {
+    color: white;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+.separator.notif {
+    border: 1px solid var(--br);
+    width: calc(100% - 2em);
+    margin-left: 1em;
+}
+
+.separator.page {
+    border: 1px solid var(--br);
+    width: calc(100% - 17.5em);
+    margin-left: 5em;
+    margin-right: 8.5em;
+}
+
+.separator {
+    border: 1px solid var(--br);
+}
+
+.notifications {
+    position: fixed;
+    right: 21em;
+    top: 7em;
+    text-align: center;
+    width: 300px;
+    height: 350px;
+    border: 1px solid var(--br);
+    border-radius: 5px;
+    color: #fff;
+    background-color: var(--bg);
+}
+
+.footer-notifications {
+    position: fixed;
+    width: 300px;
+    top: calc(7em + 306px);
+}
+
+.btn {
+    margin-top: 7px;
+    background-color: var(--clr);
+    border-radius: 25px;
+    border: 1px solid var(--br);
+    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    color: white;
+    cursor: pointer;
+}
+
+.footer {
+    position: fixed;
+    bottom: .75em;
+    width: 100%;
+}
+.footer p {
+    text-align: center;
+    font-size: 1.25em;
+    color: #fff;
+    opacity: 25%;
+}
