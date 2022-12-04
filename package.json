@@ -1,25 +1,22 @@
 {
-  "name": "t.chat",
-  "version": "1.0.0",
-  "description": "T.Chat est une plateforme de messagerie instantanée, comprenant des applications telles que WhatsApp, Snapchat et Instagram.",
-  "main": "app.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mateis-rgb/t.chat.git"
-  },
-  "author": "Mateis",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mateis-rgb/t.chat/issues"
-  },
-  "homepage": "https://github.com/mateis-rgb/t.chat#readme",
-  "devDependencies": {
-    "electron": "^16.0.7"
-  },
-  "dependencies": {
-    "mysql": "^2.18.1"
-  }
+	"name": "tchat",
+	"version": "1.0.0",
+	"description": "",
+	"author": "Mateis",
+	"license": "ISC",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron .",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"fs": "0.0.1-security",
+		"mysql": "^2.18.1",
+		"sha1": "^1.1.1"
+	},
+	"devDependencies": {
+		"electron": "^11.2.1",
+		"electron-ipc-broadcast": "^0.1.0",
+		"jquery": "^3.5.1"
+	}
 }

@@ -1,0 +1,14 @@
+/* #user {
+    max-width: 285px;
+    max-height: 559px;
+    width: 285px;
+    height: 559px;
+} */
+
+#conversations {
+    /* padding-left: 500px !important;
+    max-width: 821px;
+    max-height: 360px; */
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+}

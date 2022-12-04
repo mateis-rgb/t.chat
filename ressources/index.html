@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title id="title"></title>
+		<link href=".\css\style.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+
+	</head>
+	<body>
+		<div class="container">
+			<ul id="navbar">
+				<h3>Links :</h3>
+				<!-- <a href="auth/index.html">auth</a> -->
+				<!-- <a href="conversations/index.html">conv</a> -->
+				<!-- <a href="auth/disconnect.html">disconnect</a> -->
+			</ul>
+		</div>
+			
+		<script src="./js/jquery-3.5.1.js"></script>
+		<script src="./js/popper.js"></script>
+		<script src="./js/bootstrap.js"></script>
+		
+		<script src="store/include.js"></script>
+		<script>
+			var GetState = sessionStorage.getItem('user-state')
+			var State = "not-connected"
+			var GetUserName = null
+			if (GetState == "connected") { 
+				GetUser = sessionStorage.getItem('user')
+				user = JSON.parse(GetUser)
+				document.getElementById('title').innerText = "Conversation APP - (" + GetState + " as " + user.name + ")"
+
+				var childAUTH = document.createElement('li')
+				childAUTH.innerHTML = "<a href='auth/disconnect.html'>disconnected</a>"
+
+				var childCONV = document.createElement('li')
+				childCONV.innerHTML = "<a href='conversations/index.html'>conv</a>"
+
+				document.getElementById('navbar').appendChild(childCONV)
+				document.getElementById('navbar').appendChild(childAUTH)
+				
+				
+				window.location.href = "conversations/index.html";
+			}
+			else { 
+				document.getElementById('title').innerText = "Conversation APP - (" + State + ")"
+				sessionStorage.setItem('user-state', 'not-connected')
+
+				var child = document.createElement('li')
+				child.innerHTML = "<a href='auth/index.html'>auth</a>"
+
+				document.getElementById('navbar').appendChild(child)
+
+
+				window.location.href = "auth/index.html";
+			}
+		</script>
+	</body>
+</html>

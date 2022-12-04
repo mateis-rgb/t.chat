@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title id="title"></title>
+		<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="./auth.css">
+	</head>
+	<body>
+		<div class="box">
+			<h1 id="logintoregister">Login</h1>
+
+			<div class="group show">      
+			  <input class="inputMaterial" id="name" type="text" required>
+			  <span class="highlight"></span>
+			  <span class="bar"></span>
+			  <label>Name</label>
+			</div>
+
+			<div class="group">      
+				<input class="inputMaterial" id="email" type="email" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Email</label>
+			</div>
+
+			<div class="group">      
+				<input class="inputMaterial" id="password" type="password" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Password</label>
+			</div>
+
+			<div class="group show">      
+				<input class="inputMaterial" id="cpassword" type="password" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label>Confirm password</label>
+			</div>
+
+			<button id="buttonlogin" onclick="connect()">Login</button>
+			<button id="buttonregister" onclick="addUser()">Register</button>
+			<p id="textchange" onclick="toggleMode()">Register</p>
+			<p id="info"></p>
+		</div>		
+
+		<script src="./auth.js"></script>
+		<script>
+			var GetSession = sessionStorage.getItem('user-state')
+			document.getElementById('title').innerText = "Auth - (" + GetSession + ")"
+
+			const $ = require('jquery')
+			
+			var cont = 0;
+
+			$('#buttonregister').hide();
+
+			if (sessionStorage.getItem('user-state') == 'connected') {
+				window.location.href = "../index.html"
+			}
+
+			function toggleMode() {
+
+				cont++;
+
+				const infoText = document.getElementById('info')
+					
+					if(cont==1){
+						$('.box').animate({height:'500px'}, 600);
+						$('.show').css('display','block');
+						$('#logintoregister').text('Register');
+						$('#buttonregister').show();
+						$('#buttonlogin').hide();
+						$('#textchange').text('Login');
+					}
+					else
+					{
+						$('.show').css('display','none');
+						$('.box').animate({height:'365px'}, 550);
+						$('#logintoregister').text('Login');
+						$('#buttonlogin').show();
+						$('#buttonregister').hide();
+						$('#textchange').text('Register');
+						cont = 0;
+					}
+			}
+		</script>
+	</body>
+</html>
